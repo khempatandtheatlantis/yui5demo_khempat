@@ -1,0 +1,35 @@
+<mvc:View controllerName="yui5demokhempat.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:common="sap.suite.ui.commons"
+	xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    displayBlock="true">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        	<common:Timeline
+                id="idTimeline"
+                enableDoubleSided="true"
+                groupBy="HireDate"
+                growingThreshold="0"
+                filterTitle="Job Title"
+                sortOldestFirst="true"
+                content="{/Employees}">
+            <common:content>
+                <common:TimelineItem
+                        id="idTemplateItem"
+                        dateTime="{HireDate}"
+                        title="{JobTitle}"
+                        userNameClickable="true"
+                        userNameClicked="onUserNameClick"
+                        suggestionItemSelected="onPressItems"
+                        userPicture="{Photo}"
+                        text="{JobResponsibilities}"
+                        userName="{Name}"
+                        filterValue="{JobTitle}"
+                        icon="{Icon}">
+                </common:TimelineItem>
+            </common:content>
+        </common:Timeline>
+        </content>
+    </Page>
+</mvc:View>
